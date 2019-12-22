@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/playlist/playlist",
+    "pages/blog/blog",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d81e06",
+    "navigationBarTitleText": "云音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedcolor": "#d81e06",
+    "list": [
+      {
+      "pagePath": "pages/playlist/playlist",
+      "text": "音乐",
+      "iconPath": "images/music-beforeselect.png",
+      "selectedIconPath": "images/music-selected.png"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "text": "发布",
+        "iconPath": "images/show-beforeselect.png",
+        "selectedIconPath": "images/show-selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/mine-beforeselect.png",
+        "selectedIconPath": "images/mine-selected.png"
+      }
+    ]
+  },
+
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
