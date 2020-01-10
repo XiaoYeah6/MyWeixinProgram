@@ -1,7 +1,13 @@
 <swiper indicator-dots="true" autoplay="true" duration="800" interval="3500" circular="true">
-  <block wx:for= "{{ swiperImgUrl }}">
+  <block wx:for= "{{ swiperImgUrl }}" wx:key="url">
     <swiper-item>
       <image class="swiperImg" src="{{ item.url }}" mode="widthFix"></image>
     </swiper-item>
   </block>
 </swiper>
+
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="_id">
+    <x-playlist playlist="{{ item }}"></x-playlist>
+  </block>
+</view>
