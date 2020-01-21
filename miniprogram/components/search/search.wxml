@@ -1,0 +1,5 @@
+<view class="container">
+<icon class="iconfont icon-sousuo find"></icon>
+  <input class="bar" placeholder="请输入关键字 " placeholder-class="in-bar"></input>
+  <button class="search">搜索</button>
+</view>

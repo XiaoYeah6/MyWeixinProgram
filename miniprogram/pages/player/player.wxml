@@ -2,7 +2,20 @@
 <view class='player-mask'></view>
 
 <view class='play-info'>
-  <view class='player-disc'>
-    <image class='player-img' src="{{picUrl}}"></image>
+  <view class="player-disc {{isplay?'play':''}}" bind:tap="onChangeLyricShow" hidden="{{isLyricShow}}">
+    <image class="player-img rotation {{isplay?'':'stopPlay'}}" src="{{picUrl}}"></image>
   </view>
+
+  <x-lyric class="lyric" isLyricShow="{{!isLyricShow}}" bind:tap="onChangeLyricShow" lyric="{{lyric}}" />
+
+  <view class="progress-bar">
+    <x-progress-bar bind:musicend="onNext" bind:timeUpdate="timeUpdate" bind:musicPlay="onPlay" bind:musicPause="onPause" isSame="{{isSame}}"/>
+  </view>
+
+  <view class='control'>
+    <text class="iconfont icon-shangyishou-yuanshijituantubiao" bind:tap="onPrev"></text>
+    <text class="iconfont {{isplay?'icon-zanting':'icon-bofang'}}" bind:tap="togglePlaying"></text>
+    <text class='iconfont icon-xiayishou-yuanshijituantubiao' bind:tap="onNext"></text>
+  </view>
+
 </view>

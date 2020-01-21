@@ -1,0 +1,5 @@
+<view class="modal">
+  <view class="panel">
+    <icon class="iconfont icon-shanchudelete30"></icon>
+  </view>
+</view>
