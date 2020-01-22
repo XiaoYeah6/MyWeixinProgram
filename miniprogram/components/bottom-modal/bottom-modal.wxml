@@ -1,5 +1,6 @@
-<view class="modal">
+<view class="modal" hidden="{{!modalShow}}">
   <view class="panel">
-    <icon class="iconfont icon-shanchudelete30"></icon>
+    <icon class="iconfont icon-shanchudelete30" bind:tap="onClose"></icon>
+    <slot name="modal-content"></slot>
   </view>
 </view>
