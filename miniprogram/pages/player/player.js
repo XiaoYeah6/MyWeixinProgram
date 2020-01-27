@@ -83,7 +83,10 @@ Page({
         backgroundAudioManager.singer = music.ar[0].name
         backgroundAudioManager.coverImgUrl = music.al.picUrl
         backgroundAudioManager.epname = music.al.name
+        this.savePlayHistory()
       }
+
+      
       
       wx.hideLoading()
       wx.cloud.callFunction({
@@ -153,6 +156,26 @@ Page({
     this.setData({
       isplay: false
     })
+  },
+
+  savePlayHistory(){
+    const music = musiclist[nowPlayingIndex]
+    const openid = app.globalData.openid
+    const history = wx.getStorageSync(openid)
+    let bHave = false
+    for(let i=0,len = history.length; i < len; i++){
+      if(history[i].id == music.id){
+        bHave = true
+        break
+      }
+    }
+    if(!bHave){
+      history.unshift(music)
+      wx.setStorage({
+        key: openid,
+        data: history,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
