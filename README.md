@@ -28,4 +28,4 @@
                  - 分享
     - 小程序码
         - 小程序二维码
-![avatar](http://www.yeyilong.site/image/1.jpg)
+![avatar](http://programimg.yeyilong.site/1.jpg)
