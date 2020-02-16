@@ -27,7 +27,6 @@ Component({
       }else{
         this._parseLyric(lrc)
       }
-      console.log(lrc)
     }
   },
 
@@ -56,7 +55,6 @@ Component({
    */
   methods: {
     update(currentTime){
-      console.log(currentTime)
       let lrcList = this.data.lrcList
       if(lrcList.length == 0){
         return

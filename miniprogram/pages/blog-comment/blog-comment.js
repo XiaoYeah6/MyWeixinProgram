@@ -44,7 +44,6 @@ Page({
         commentList,
       })
       wx.hideLoading()
-      console.log(res)
     })
   },
 

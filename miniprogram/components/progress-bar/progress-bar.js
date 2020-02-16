@@ -66,32 +66,32 @@ Component({
         // console.log(rect)
         movableAreaWidth = rect[0].width;
         movableViewWidth = rect[1].width;
-        console.log(movableAreaWidth, movableViewWidth)
+        // console.log(movableAreaWidth, movableViewWidth)
       })
     },
 
     _bindBGMEvent() {
       backgroundAudioManager.onPlay(() => {
-        console.log('onPlay')
+        // console.log('onPlay')
         isMoving = false
         this.triggerEvent('musicPlay')
       })
 
       backgroundAudioManager.onStop(() => {
-        console.log('onStop')
+        // console.log('onStop')
       })
 
       backgroundAudioManager.onPause(() => {
-        console.log('Pause')
+        // console.log('Pause')
         this.triggerEvent('musicPause')
       })
 
       backgroundAudioManager.onWaiting(() => {
-        console.log('onWaiting')
+        // console.log('onWaiting')
       })
 
       backgroundAudioManager.onCanplay(() => {
-        console.log('onCanplay')
+        // console.log('onCanplay')
         if (typeof backgroundAudioManager.duration != 'undefined') {
           this._setTime()
         } else {
@@ -124,13 +124,13 @@ Component({
       })
 
       backgroundAudioManager.onEnded(() => {
-        console.log("onEnded")
+        // console.log("onEnded")
         this.triggerEvent("musicend")
       })
 
       backgroundAudioManager.onError((res) => {
-        console.error(res.errMsg)
-        console.error(res.errCode)
+        // console.error(res.errMsg)
+        // console.error(res.errCode)
         wx.showToast({
           title: '错误:' + res.errCode,
         })

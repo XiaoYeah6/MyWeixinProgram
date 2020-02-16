@@ -20,7 +20,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
     nowPlayingIndex = options.index
     musiclist = wx.getStorageSync('musiclist')
     this._lodeMusicDetail(options.musicId)
@@ -47,7 +46,6 @@ Page({
       title: '歌曲加载中',
     })
     let music = musiclist[nowPlayingIndex]
-    console.log(music)
     wx.setNavigationBarTitle({
       title: music.name,
     })
@@ -68,8 +66,6 @@ Page({
       this.setData({
         isplay: true
       })
-      console.log(res)
-      console.log(JSON.parse(res.result))
       let result = JSON.parse(res.result)
       if(result.data[0].url == null){
         wx.showToast({
@@ -96,7 +92,6 @@ Page({
           $url: 'lyric',
         }
       }).then((res)=>{
-        console.log(res)
         let lyric = '暂无歌词'
         const lrc = JSON.parse(res.result).lrc
         if(lrc){
